@@ -1,0 +1,7 @@
+h1 list to do
+form(action="/todolist/search", method="GET")
+    input(id="textbox", type="text", name="q" , placeholder = " search")
+    button Search
+ul
+    each value in list
+        li= value.work
