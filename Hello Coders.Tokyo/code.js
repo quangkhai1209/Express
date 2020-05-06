@@ -8,5 +8,9 @@ app.listen(port, ()=>{
 })
 
 app.get('/', (req, res)=>{
-    res.send('<a href="#"> facebook </a>');
+    res.send('<a href= "/todos"> to do list </a>')
+})
+
+app.get('/todos', (req, res)=>{
+    res.send('<ul><li>Đi chợ</li><li>Nấu cơm</li><li>Rửa bát</li><li>Học code tại CodersX</li></ul>');
 })
