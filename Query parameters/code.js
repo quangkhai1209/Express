@@ -3,7 +3,7 @@ const app = express();
 const port = 98;
 
 app.set('view engine', 'pug');
-// app.set('views', './views');
+app.set('views', './views');
 
 const data = [
     {id : 1, work : 'Đi chợ'},
@@ -34,3 +34,4 @@ app.get('/todolist/search', (req,res)=>{
         list : arrFilterQuery
     });
 })
+

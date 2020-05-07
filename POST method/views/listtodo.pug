@@ -1,0 +1,11 @@
+h1 list to do 
+a(href="/todo/create") Create New 
+br
+br
+form(action="/todo/search", method = "GET")
+    input(type="text", name="todo", placeholder = "search")
+    button submit
+
+ul 
+    each value in list
+        li= value.work
