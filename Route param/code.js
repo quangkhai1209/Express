@@ -57,8 +57,12 @@ app.get('/todo/:id/delete',(req,res)=>{
 
 app.post('/todo/:id/delete',(req,res)=>{
     const id = req.params.id;
+    // db.get('todo')
+    // .remove({ id: id })
+    // .write()
     const removeIndex = db.get('todo').value().map(function(item) { return item.id; }).indexOf(id);
     db.get('todo').value().splice(removeIndex, 1);
+    db.get('todo').write();
     res.redirect("/todolist")
 })
 
