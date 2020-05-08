@@ -1,0 +1,17 @@
+h1 to do list
+a(href="/todolist/create") create new
+br
+br
+form(action="/todolist/search", method="get")
+    input(type="text", name = "q")
+    button search
+
+ul
+    each value in list
+        li
+            span= value.work
+            span &nbsp
+            a(href="/todo/details/" + value.id) view 
+            span &nbsp
+            a(href="/todo/" + value.id + "/delete") Delete 
+            p
