@@ -1,0 +1,18 @@
+h1 welcome to manage book page
+
+a(href="/book/create") new Book
+
+p
+
+form(action="/book/search", method="get")
+    input(type="text", name = "q")
+    button search
+
+ul 
+    each item in list
+        li= item.title + " : " + item.description
+            span &nbsp
+            a(href="/book/"+item.id + "/Edit", style="padding: 8px 16px") Edit
+            span &nbsp
+            a(href="/book/"+item.id + "/Delete", style="padding: 8px 16px") Delete
+            p
