@@ -43,7 +43,7 @@ app.get('/book/search',(req,res)=>{
     })
 })
 
-app.get('/book/:id/Delete', (req, res) => {
+app.get('/book/Delete/:id', (req, res) => {
     const id = req.params.id;
     const book = db.get('book').value().find((item) => {
         return item.id.toLowerCase().indexOf(id.toLowerCase()) !== -1;
@@ -53,19 +53,19 @@ app.get('/book/:id/Delete', (req, res) => {
     })
 });
 
-app.post('/book/:id/Delete', (req, res) => {
+app.post('/book/Delete/:id', (req, res) => {
     const id = req.params.id;
     console.log(id)
-    // db.get('todo')
-    // .remove({ id: id })
-    // .write()
-    const removeIndex = db.get('book').value().map(function (item) { return item.id; }).indexOf(id);
-    db.get('book').value().splice(removeIndex, 1);
-    db.get('book').write();
+    db.get('book')
+    .remove({ id: id })
+    .write()
+    // const removeIndex = db.get('book').value().map(function (item) { return item.id; }).indexOf(id);
+    // db.get('book').value().splice(removeIndex, 1);
+    // db.get('book').write();
     res.redirect("/");
 });
 
-app.get('/book/:id/Edit', (req, res) => {
+app.get('/book/Edit/:id', (req, res) => {
     const id = req.params.id;
     const book = db.get('book').value().find((item) => {
         return item.id.toLowerCase().indexOf(id.toLowerCase()) !== -1;
@@ -76,7 +76,8 @@ app.get('/book/:id/Edit', (req, res) => {
     })
 });
 
-app.post('/book/:id/Edit', (req, res) => {
+app.post('/book/Edit/:id', (req, res) => {
+    console.log( req.params.id ) // => edit 
     db.get('book')
         .find({ id: req.params.id })
         .assign({ title: req.body.title})

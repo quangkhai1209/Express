@@ -7,7 +7,7 @@ p old description :
     span= value.description
 
 h3 new value :
-form(action="Edit", method="post")
+form(action="/book/Edit/"+ value.id, method="post") 
     label(for="") Title &nbsp
     input(type="text", name="title", placeholder="Enter Book Title")
     p
