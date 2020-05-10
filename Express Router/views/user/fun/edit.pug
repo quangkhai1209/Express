@@ -1,0 +1,18 @@
+h1 Definitely with the edits
+
+p old title : 
+    span= user.name 
+
+p old description : 
+    span= user.phone
+
+h3 new value :
+form(action="/user/edit/"+ user.id, method="post") 
+    label(for="") name &nbsp
+    input(type="text", name="name", placeholder="Enter user name")
+    p
+    label(for="") phone &nbsp
+    input(type="text", name="phone", placeholder="Enter user phone" , value= user.phone)
+    p
+
+    button(style="margin-left: 30px") submit

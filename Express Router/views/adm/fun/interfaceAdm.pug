@@ -1,0 +1,20 @@
+a(href="/") logout 
+p 
+a(href="/users/user") manage user
+h1 page manage books
+p
+a(href="/admin/create") new book
+p
+form(action="/admin/search", method="get")
+    input(type="text", name = "q")
+    button search
+
+h3 list book :
+ul 
+    each book in books
+        li= book.title + " : " + book.description
+            span &nbsp
+            a(href="/admin/edit/"+book.id , style="padding: 8px 16px") Edit
+            span &nbsp
+            a(href="/admin/delete/" + book.id, style="padding: 8px 16px") delete
+            p

@@ -55,7 +55,6 @@ app.get('/book/Delete/:id', (req, res) => {
 
 app.post('/book/Delete/:id', (req, res) => {
     const id = req.params.id;
-    console.log(id)
     db.get('book')
     .remove({ id: id })
     .write()

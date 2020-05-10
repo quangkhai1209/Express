@@ -1,0 +1,33 @@
+{
+  "books": [
+    {
+      "title": "html",
+      "description": "thiss is html book",
+      "id": "2l6WT2XAn"
+    },
+    {
+      "title": "css",
+      "description": "this is css book",
+      "id": "aI3Aj_YOV"
+    }
+  ],
+  "users": [
+    {
+      "name": "Chu Nguyên Chương",
+      "phone": "0987374741",
+      "id": "RJwxQ-HUD"
+    },
+    {
+      "name": "nguyen chuong",
+      "phone": "321654",
+      "id": "KElgGLRTW"
+    }
+  ],
+  "admin": [
+    {
+      "id": 0,
+      "user_name": "admin",
+      "password": 123456
+    }
+  ]
+}

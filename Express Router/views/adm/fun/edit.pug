@@ -1,0 +1,18 @@
+h1 Definitely with the edits
+
+p old title : 
+    span= book.title
+
+p old description : 
+    span= book.description
+
+h3 new value :
+form(action="/admin/edit/"+ book.id, method="post") 
+    label(for="") Title &nbsp
+    input(type="text", name="title", placeholder="Enter Book Title")
+    p
+    label(for="") Description &nbsp
+    input(type="text", name="Description", placeholder="Enter Book Description" , value= book.description)
+    p
+
+    button(style="margin-left: 30px") add
