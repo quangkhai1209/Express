@@ -31,7 +31,6 @@ book.get('/create',(req,res)=>{
 book.post('/create',(req,res)=>{
     req.body.id = shortId.generate();
     db.get('books').push(req.body).write();
-    console.log(req.body)
     res.redirect("/admin/books")
 })
 

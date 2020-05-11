@@ -1,11 +1,8 @@
 const express = require('express');
 const port = 98;
-const db = require('./db')
-const shortId = require('shortid');
 const userRoute = require('./routes/user.route');
-const bookRoute = require('./routes/book.route')
-
-
+const bookRoute = require('./routes/book.route');
+const transactionRoute = require('./routes/transaction.route');
 
 const app = express();
 app.use(express.json());
@@ -21,6 +18,8 @@ app.get('/',(req,res)=>{
     res.render('index');
 })
 
-app.use('/admin',bookRoute)
+app.use('/admin',bookRoute);
 
-app.use('/user', userRoute)
+app.use('/user', userRoute);
+
+app.use('/transaction',transactionRoute);

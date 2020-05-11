@@ -1,0 +1,16 @@
+form(action="", method="post")
+    label(for='book') Choose a Book :
+    select#book(name = "bookId")
+        each book in books
+            option(value= book.id)= book.title
+    p
+    button transaction
+p
+
+h1 list book borrowed :
+ul
+    each item in transaction
+        li= item.title
+            span &nbsp
+            a(href="", style="padding: 4px 12px; text-decoration:none; background-color : red; border-radius: 16px; color: white;") has returned
+            p
