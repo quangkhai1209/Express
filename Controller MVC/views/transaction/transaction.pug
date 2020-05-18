@@ -1,0 +1,28 @@
+h1 Are you sure Delete This user 
+
+p
+ p 
+    b title : 
+    span &nbsp
+    span= user.name 
+    span &nbsp
+    p
+    b phone : 
+    span &nbsp
+    span= user.phone
+    span &nbsp
+p
+form(action="", method="POST")
+    select(name="bookId")
+        each book in books
+            option(value= book.id)= book.name
+    p
+    button transaction
+
+h2 list book borrowed :
+ul
+    each item in transaction
+        li= item.name
+            span &nbsp
+            a(href="", style="padding: 4px 12px; text-decoration:none; background-color : red; border-radius: 16px; color: white;") has returned
+            p

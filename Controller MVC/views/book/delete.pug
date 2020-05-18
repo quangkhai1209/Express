@@ -1,0 +1,20 @@
+h1 Are you sure Delete This Book 
+
+p
+ p 
+    b title : 
+    span &nbsp
+    span= books.name 
+    p
+
+    b description : 
+    span &nbsp
+    span= books.description
+    p
+
+    b cost : 
+    span &nbsp
+    span= books.cost
+p
+form(action="/book/delete/"+ books.id, method="POST")
+    button Delete

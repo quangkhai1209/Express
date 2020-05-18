@@ -1,0 +1,61 @@
+{
+  "books": [
+    {
+      "name": "js",
+      "description": "this is js book",
+      "cost": "200",
+      "id": "OoUWr7mEG"
+    },
+    {
+      "name": "css",
+      "description": "this is css book",
+      "cost": "100",
+      "id": "3Pw9rV0EB"
+    },
+    {
+      "name": "html",
+      "description": "thiss is html book",
+      "cost": "50",
+      "id": "_S5lDP8kB"
+    }
+  ],
+  "users": [
+    {
+      "name": "mai ngọc mai",
+      "phone": "123456",
+      "id": "wM4ZZaARe"
+    },
+    {
+      "name": "Chu Nguyên Chương",
+      "phone": "0987374741",
+      "id": "q9XrKzwZM"
+    }
+  ],
+  "transaction": [
+    {
+      "bookId": "OoUWr7mEG",
+      "id": "qcrhABxDO",
+      "UserId": "wM4ZZaARe"
+    },
+    {
+      "bookId": "3Pw9rV0EB",
+      "id": "tF8Ycw_BU",
+      "UserId": "wM4ZZaARe"
+    },
+    {
+      "bookId": "_S5lDP8kB",
+      "id": "V0Pn9xbIX",
+      "UserId": "q9XrKzwZM"
+    },
+    {
+      "bookId": "_S5lDP8kB",
+      "id": "BtfOIWL6J",
+      "UserId": "wM4ZZaARe"
+    },
+    {
+      "bookId": "OoUWr7mEG",
+      "id": "1jcHHkyCJ",
+      "UserId": "q9XrKzwZM"
+    }
+  ]
+}

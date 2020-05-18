@@ -1,0 +1,16 @@
+h1 Are you sure Delete This user 
+
+p
+ p 
+    b title : 
+    span &nbsp
+    span= user.name 
+    span &nbsp
+    p
+    b phone : 
+    span &nbsp
+    span= user.phone
+    span &nbsp
+p
+form(action="/user/delete/"+ user.id, method="POST")
+    button Delete

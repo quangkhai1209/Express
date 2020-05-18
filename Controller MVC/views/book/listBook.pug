@@ -1,0 +1,19 @@
+h1 my list book 
+a(href="/user") user manage
+p
+
+a(href="/book/add") add new book
+p
+form(action="/book/search", method = 'get')
+    input(type="text", name ='q') 
+    button search
+
+ul
+    each book in books
+        li= book.name + " : " + book.description + ' => ' + book.cost + " $"
+            span &nbsp
+            a(href="/book/edit/"+book.id , style="padding: 8px 16px") Edit
+            span &nbsp
+            a(href="/book/delete/" + book.id, style="padding: 8px 16px") delete
+            p
+            
