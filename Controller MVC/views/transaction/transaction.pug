@@ -1,4 +1,4 @@
-h1 Are you sure Delete This user 
+h1 complete transaction give knowledge
 
 p
  p 
@@ -19,10 +19,13 @@ form(action="", method="POST")
     p
     button transaction
 
+
 h2 list book borrowed :
 ul
     each item in transaction
-        li= item.name
+        each list in listBorrow
             span &nbsp
-            a(href="", style="padding: 4px 12px; text-decoration:none; background-color : red; border-radius: 16px; color: white;") has returned
-            p
+            if item.id === list.bookId
+                li= item.name 
+                    a(href="/transaction/" + list.id + "/complete", style="padding: 4px 12px; text-decoration:none; background-color : red; border-radius: 16px; color: white; margin-left: 30px ") has returned
+                    p
