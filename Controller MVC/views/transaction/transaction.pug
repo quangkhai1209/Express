@@ -22,8 +22,8 @@ form(action="", method="POST")
 
 h2 list book borrowed :
 ul
-    each item in transaction
-        each list in listBorrow
+    each list in listBorrow
+        each item in transaction 
             span &nbsp
             if item.id === list.bookId
                 li= item.name 
