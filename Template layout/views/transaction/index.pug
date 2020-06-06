@@ -1,0 +1,18 @@
+extends ../layouts/common
+
+block content
+  h1 Transaction list
+  a(href="transaction/create") Create transaction
+  ul
+    each transaction in transactions
+      li
+        span= transaction.userName
+        span  ----- &nbsp;
+        span borrowed the book: 
+        span &nbsp;
+        span= transaction.bookTitle 
+          if !transaction.isComplete
+            span --------
+              a(href="/transaction/complete/" + transaction.id )  Complete
+          else 
+            span ---------  Complete Done    

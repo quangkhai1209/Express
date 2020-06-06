@@ -1,0 +1,88 @@
+{
+  "books": [
+    {
+      "name": "HTMl",
+      "description": "This is HTMl Book",
+      "id": "9ot_fmyv5",
+      "cost": "500"
+    },
+    {
+      "name": "CSS",
+      "description": "This is CSS Book",
+      "cost": "200",
+      "id": "BMuzNdz0p"
+    },
+    {
+      "name": "JAVA",
+      "description": "JAVA in the life",
+      "cost": "6000",
+      "id": "uErG05Qba"
+    }
+  ],
+  "users": [
+    {
+      "name": "Chu Nguyên Chương",
+      "age": "20",
+      "phone": "0987374741",
+      "id": "AG-56iNa0"
+    },
+    {
+      "name": "Ngoc Mai",
+      "age": "20",
+      "phone": "123456",
+      "id": "FO7OGl0OX"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "Gp4ussMwj",
+      "userId": "AG-56iNa0",
+      "bookId": "9ot_fmyv5",
+      "userName": "Chu Nguyên Chương",
+      "bookTitle": "HTMl",
+      "dateCurrent": "2-6-2020",
+      "isComplete": true,
+      "dateComplete": "2-6-2020"
+    },
+    {
+      "id": "YzQ9wVg-A",
+      "userId": "FO7OGl0OX",
+      "bookId": "9ot_fmyv5",
+      "userName": "Ngoc Mai",
+      "bookTitle": "HTMl",
+      "dateCurrent": "2-6-2020",
+      "isComplete": true,
+      "dateComplete": "2-6-2020"
+    },
+    {
+      "id": "LtaPjUIXR",
+      "userId": "FO7OGl0OX",
+      "bookId": "BMuzNdz0p",
+      "userName": "Ngoc Mai",
+      "bookTitle": "CSS",
+      "dateCurrent": "2-6-2020",
+      "isComplete": true,
+      "dateComplete": "2-6-2020"
+    },
+    {
+      "id": "31LV25Ohv",
+      "userId": "FO7OGl0OX",
+      "bookId": "BMuzNdz0p",
+      "userName": "Ngoc Mai",
+      "bookTitle": "CSS",
+      "dateCurrent": "2-6-2020",
+      "isComplete": true,
+      "dateComplete": "2-6-2020"
+    },
+    {
+      "id": "FyC4NrreN",
+      "userId": "FO7OGl0OX",
+      "bookId": "BMuzNdz0p",
+      "userName": "Ngoc Mai",
+      "bookTitle": "CSS",
+      "dateCurrent": "5-6-2020",
+      "isComplete": true,
+      "dateComplete": "5-6-2020"
+    }
+  ]
+}

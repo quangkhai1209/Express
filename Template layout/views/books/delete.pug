@@ -1,0 +1,22 @@
+extends ../layouts/common
+
+block content
+    h1
+        | Are you sure 
+        span.badge.badge-danger  Delete
+        span  This user 
+
+    p
+    p 
+        b title : 
+        span &nbsp
+        span= book.name 
+        p
+
+        b description : 
+        span &nbsp
+        span= book.description
+        p
+    p
+    form(action="/books/delete/"+ book.id, method="POST")
+        button.btn.btn-warning Delete

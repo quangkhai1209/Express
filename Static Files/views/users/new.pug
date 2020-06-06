@@ -1,0 +1,15 @@
+extend ../layouts/common
+block content
+    .alert.alert-primary(style="text-align: center") 
+        h1 new User
+
+    form(action="", method="post")
+        .input-group
+            .input-group-prepend
+                span#inputGroup-sizing-default.input-group-text Name
+                    input.form-control(type='text',name="name", placeholder="Enter Your Name")
+                span#inputGroup-sizing-default.input-group-text age
+                    input.form-control(type='text', name="age",  placeholder="Enter Your Age")
+                span#inputGroup-sizing-default.input-group-text phone
+                    input.form-control(type='text', name="phone",  placeholder="Enter Your Phone")
+            button.btn.btn-success Add

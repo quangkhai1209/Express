@@ -1,0 +1,32 @@
+extends ../layouts/common
+
+block content
+    h1
+        | Definitely with the 
+        span.badge.badge-secondary Edits
+
+    p old title : 
+        span= book.name
+
+    p old description : 
+        span= book.description
+
+
+    h3 new value :
+    form(action="/books/edit/"+ book.id, method="post") 
+        //- label(for="") Title &nbsp
+        //- input(type="text", name="name", placeholder="Enter Book name")
+        //- p
+        //- label(for="") Description &nbsp
+        //- input(type="text", name="description", placeholder="Enter Book Description" , value= book.description)
+        //- p
+
+        //- button(style="margin-left: 30px") add
+
+        .input-group.mb-3
+            .input-group-prepend
+                span#inputGroup-sizing-default.input-group-text Name
+                    input.form-control(type='text',name="name", placeholder="Enter user Name")
+                span#inputGroup-sizing-default.input-group-text Description
+                    input.form-control(type='text', name="description",  placeholder="Enter user Phone", value= book.description)
+        button.btn.btn-success Submit

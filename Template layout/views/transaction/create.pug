@@ -1,0 +1,19 @@
+extends ../layouts/common
+
+block content
+    h1 Create transaction
+
+    form(action="/transaction/create", method="POST")
+        .input-group
+            .alert.alert-primary(role='alert')
+                | Choose user:
+            select#inputGroupSelect04.custom-select(name="userId")
+                each user in users
+                    option(value=user.id)=user.name
+            .alert.alert-primary(role='alert')
+                | Choose book:
+            select#inputGroupSelect04.custom-select(name="bookId")
+                each book in books
+                    option(value=book.id)= book.name   
+            .input-group-append
+        button.btn.btn-primary(type='submit') Button

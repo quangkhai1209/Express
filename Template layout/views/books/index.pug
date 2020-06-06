@@ -1,0 +1,33 @@
+extends ../layouts/common
+
+block content
+    h1 manage book
+    p
+    a.btn.btn-primary(href="/books/create", class= "btn") new books ?
+
+    p
+    form(action="/books/search", method= 'get')
+        .input-group.mb-3
+            input.form-control(type='text', placeholder="Recipient's book's Name", name="q")
+            .input-group-append
+                button#button-addon2.btn.btn-outline-secondary Search
+
+
+    table.table.table-striped.table-dark
+        thead
+            tr
+                th(scope='col') ID
+                th(scope='col') Name
+                th(scope='col') Description
+                th(scope='col') Edit
+                th(scope='col') Delete
+        tbody
+            each book in books
+                tr
+                    th(scope='row')= book.id
+                    td= book.name
+                    td= book.description
+                    td 
+                        a(href="/books/edit/"+ book.id) edit
+                    td
+                        a(href="/books/delete/"+ book.id) delete

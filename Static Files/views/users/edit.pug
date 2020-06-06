@@ -1,0 +1,28 @@
+extends ../layouts/common
+
+block content
+    h1
+        | Definitely with the 
+        span.badge.badge-secondary Edits
+
+    p old Name : 
+        span= user.name
+
+    p old Age : 
+        span= user.age
+
+    p old Phone : 
+        span= user.phone
+
+    h3 new value :
+    form(action="/users/edit/"+ user.id, method="post")
+
+        .input-group.mb-3
+            .input-group-prepend
+                span#inputGroup-sizing-default.input-group-text Name
+                    input.form-control(type='text',name="name", placeholder="Enter user's Name")
+                span#inputGroup-sizing-default.input-group-text Age
+                    input.form-control(type='text', name="age", value= user.age)
+                span#inputGroup-sizing-default.input-group-text Phone
+                    input.form-control(type='text', name="phone", value= user.phone)
+        button.btn.btn-success Submit

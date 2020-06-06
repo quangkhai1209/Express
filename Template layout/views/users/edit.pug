@@ -1,0 +1,22 @@
+extends ../layouts/common
+
+block content
+    h1
+        | Definitely with the 
+        span.badge.badge-secondary Edits
+
+    p old title : 
+        span= user.name 
+
+    p old description : 
+        span= user.phone
+
+    h3 new value :
+    form(action="/users/edit/"+ user.id, method="post") 
+        .input-group.mb-3
+            .input-group-prepend
+                span#inputGroup-sizing-default.input-group-text Name
+                    input.form-control(type='text',name="name", placeholder="Enter user Name")
+                span#inputGroup-sizing-default.input-group-text Phone
+                    input.form-control(type='text', name="phone",  placeholder="Enter user Phone", value= user.phone)
+        button.btn.btn-success Add

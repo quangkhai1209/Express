@@ -1,0 +1,21 @@
+extends ../layouts/common
+
+block content
+    a(href="/books", class= "btn btn-danger btn-block") manage book
+
+    h1(class="alert alert-primary") page manage users
+    p
+    a(href="/users/create", class= "btn btn-secondary") new user
+    p
+    form(action="/users/search", method="get")
+        .input-group.mb-3
+            input.form-control(type='text', placeholder="Recipient's username", name="q")
+            .input-group-append
+                button#button-addon2.btn.btn-outline-secondary Search
+
+        
+    ul.list-group list users :
+        each user in users
+            li.list-group-item= user.name + " : " + user.phone
+                a(href="/users/edit/"+ user.id , class= "btn btn-secondary ml-3 mr-3") Edit
+                a(href="/users/delete/" + user.id,  class= "btn btn-danger") delete
