@@ -1,0 +1,29 @@
+extends ../layouts/common
+block content   
+    a(href="/users/new").btn.btn-primary  New
+    h1 users list : 
+    form(action="/users/search", method="get")
+        .form-inline.my-2.my-lg-0.pr-0.pb-4
+            input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search', name="q")
+            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search   
+    table.table.table-striped.table-dark
+        thead
+            tr
+            th(scope='col') ID
+            th(scope='col') Name
+            th(scope='col') Age
+            th(scope='col') Phone
+            th(scope='col') Edit
+            th(scope='col') Delete
+        tbody
+            each user in users
+                tr
+                    th(scope='row')= user.id
+                    td= user.name
+                    td= user.age
+                    td= user.phone
+                    td
+                        a(href="/users/edit/" + user.id).btn.btn-primary Edit
+                    td
+                        a(href="/users/delete/" + user.id).btn.btn-danger Delete
+                

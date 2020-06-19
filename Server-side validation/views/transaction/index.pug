@@ -1,0 +1,59 @@
+extends ../layouts/common
+block content
+
+    
+    form(action="/transaction/new", method="POST")
+        .input-group
+            .alert.alert-primary(role='alert')
+                | Choose user:
+            select#inputGroupSelect04.custom-select(name="userId")
+                each user in users
+                    option(value=user.id)=user.name
+            .alert.alert-primary(role='alert')
+                | Choose book:
+            select#inputGroupSelect04.custom-select(name="bookId")
+                each book in books
+                    option(value=book.id)= book.name   
+            .input-group-append
+            button.btn.btn-danger ADD  
+
+    form(action="/transaction/search", method= 'get')
+        .input-group.mt-3.mb-3
+            input.form-control(name = "nameUser",placeholder ="Enter to search by User Name")
+            .input-group-append
+            input.form-control(name = "nameBook",placeholder ="Enter to search by Book Title")
+            .input-group-append
+                button.btn.btn-primary search
+
+    h1 Transaction list :
+
+    table.table.table-striped.table-dark
+        thead
+            tr
+            th(scope='col') ID
+            th(scope='col') ID User
+            th(scope='col') Name User
+            th(scope='col') ID Book
+            th(scope='col') Name Book
+            th(scope='col') Date Borrow
+            th(scope='col') Status
+            th(scope='col') Complete
+        tbody
+            each trans in transactions
+                tr
+                    th(scope='row')= trans.id
+                    td= trans.userId
+                    td= trans.userName
+                    td= trans.bookId
+                    td= trans.bookTitle
+                    td= trans.dateCurrent
+                    if trans.isComplete
+                        td= trans.dateComplete  
+                            span  complete
+                    else if !trans.isComplete
+                        td transaction not completed
+                    td
+                        if trans.isComplete
+                            | Completed
+                        else if !trans.isComplete
+                            a(href="/transaction/complete/" + trans.id).btn.btn-primary Complete

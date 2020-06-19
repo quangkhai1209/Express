@@ -38,7 +38,7 @@ block content
                         td= trans.dateComplete  
                             span  complete
                     else if !trans.isComplete
-                        td transaction not completed
+                        td(style="color : red") transaction not completed
                     td
                         if trans.isComplete
                             | Completed
