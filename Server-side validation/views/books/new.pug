@@ -7,9 +7,12 @@ block content
         .input-group
             .input-group-prepend
                 span#inputGroup-sizing-default.input-group-text Name
-                    input.form-control(type='text',name="name", placeholder="Enter Book's Name")
+                    input.form-control(type='text',name="name", placeholder="Enter Book's Name", value= values ? values.name : "")
                 span#inputGroup-sizing-default.input-group-text description
-                    input.form-control(type='text', name="description",  placeholder="Enter Book's Description")
+                    input.form-control(type='text', name="description",  placeholder="Enter Book's Description", value= values ? values.description : "")
                 span#inputGroup-sizing-default.input-group-text Cost
-                    input.form-control(type='text', name="cost",  placeholder="Enter Book's Cost")
+                    input.form-control(type='text', name="cost",  placeholder="Enter Book's Cost", value= values ? values.cost : "")
             button.btn.btn-success Add
+    if errs
+        each err in errs
+            .alert.alert-danger(pt-5)= err

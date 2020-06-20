@@ -1,6 +1,7 @@
 extends ../layouts/common
 block content
-
+    .alert.alert-danger(style="text-align: center")
+        h1 Transaction page
     
     form(action="/transaction/new", method="POST")
         .input-group
@@ -26,6 +27,8 @@ block content
                 button.btn.btn-primary search
 
     h1 Transaction list :
+        .alert.alert-primary(style="text-align: center") 
+            h1= text
 
     table.table.table-striped.table-dark
         thead

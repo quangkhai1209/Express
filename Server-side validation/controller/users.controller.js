@@ -14,7 +14,11 @@ module.exports.postNew = (req,res)=>{
     let err = [];    
     if(!req.body.name){
         err.push('Name is require !!! ');
-    }if(!req.body.age){
+    }
+    if(req.body.name.length > 30){
+        err.push('Max length of your name is 30')
+    }
+    if(!req.body.age){
         err.push('Age is require !!! ');
     }if(!req.body.phone){
         err.push('Phone is require !!! ');
@@ -45,7 +49,7 @@ module.exports.postEdit = (req,res)=>{
 module.exports.getDelete = (req,res)=>{
     const id = req.params.id;
     res.render('users/delete', {
-        user : db.get('users').find({id : id}).value()
+        user : db.get('users').find({id : id} ).value()
     });
 };
 module.exports.postDelete = (req,res)=>{

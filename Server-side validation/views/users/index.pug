@@ -1,5 +1,7 @@
 extends ../layouts/common
 block content   
+    .alert.alert-danger(style="text-align: center")
+        h1 Users page
     a(href="/users/new").btn.btn-primary  New
     h1 users list : 
     form(action="/users/search", method="get")

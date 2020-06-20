@@ -53,64 +53,24 @@
   ],
   "transaction": [
     {
-      "id": "8HWXXVQMl",
+      "id": "3a9CSWbaZ",
+      "userId": "fQVydxHNt",
+      "bookId": "vb_u52FbN",
+      "userName": "Chu Nguyen Chuong",
+      "bookTitle": "HTML",
+      "dateCurrent": "6-6-2020",
+      "isComplete": true,
+      "dateComplete": "6-6-2020"
+    },
+    {
+      "id": "KNXCL0gHn",
       "userId": "DKRCn0al9",
       "bookId": "gMgEZ4n8c",
       "userName": "Ngoc Mai",
       "bookTitle": "CSS",
-      "dateCurrent": "0-6-2020",
+      "dateCurrent": "6-6-2020",
       "isComplete": true,
-      "dateComplete": "0-6-2020"
-    },
-    {
-      "id": "xxnTmXNxg",
-      "userId": "fQVydxHNt",
-      "bookId": "uBsCq6oRP",
-      "userName": "Chu Nguyen Chuong",
-      "bookTitle": "How To Win Friends & influence People",
-      "dateCurrent": "0-6-2020",
-      "isComplete": true,
-      "dateComplete": "0-6-2020"
-    },
-    {
-      "id": "YzO4WE4rF",
-      "userId": "Gmf_NAK3Q",
-      "bookId": "sJ2Cwkxpo",
-      "userName": "Khai Tran",
-      "bookTitle": "JS",
-      "dateCurrent": "0-6-2020",
-      "isComplete": true,
-      "dateComplete": "0-6-2020"
-    },
-    {
-      "id": "VchHyFGi5",
-      "userId": "fQVydxHNt",
-      "bookId": "vb_u52FbN",
-      "userName": "Chu Nguyen Chuong",
-      "bookTitle": "HTML",
-      "dateCurrent": "0-6-2020",
-      "isComplete": true,
-      "dateComplete": "0-6-2020"
-    },
-    {
-      "id": "-IoyqQeEH",
-      "userId": "fQVydxHNt",
-      "bookId": "vb_u52FbN",
-      "userName": "Chu Nguyen Chuong",
-      "bookTitle": "HTML",
-      "dateCurrent": "0-6-2020",
-      "isComplete": true,
-      "dateComplete": "0-6-2020"
-    },
-    {
-      "id": "t8zpElMxiE",
-      "userId": "fQVydxHNt",
-      "bookId": "vb_u52FbN",
-      "userName": "Chu Nguyen Chuong",
-      "bookTitle": "HTML",
-      "dateCurrent": "0-6-2020",
-      "isComplete": true,
-      "dateComplete": "0-6-2020"
+      "dateComplete": "6-6-2020"
     }
   ]
 }

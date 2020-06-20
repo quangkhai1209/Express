@@ -11,6 +11,23 @@ module.exports.getNew = (req,res)=>{
 };
 module.exports.postNew = (req,res)=>{
     req.body.id = shortId.generate();
+    let err = [];
+    if(!req.body.name){
+        err.push('Name Is  Require !!! ');
+    }
+    if(!req.body.description){
+        err.push('Description Is Require !!!');
+    }
+    if(!req.body.cost){
+        err.push("Cost Is Require !!!");
+    }
+    if(err.length){
+        res.render('books/new',{
+            errs : err,
+            values : req.body, 
+        })
+        return;
+    }
     db.get('books').push(req.body).write();
     res.redirect('/books')
 };
