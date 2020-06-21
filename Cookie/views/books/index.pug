@@ -1,0 +1,30 @@
+extends ../layouts/common
+block content
+    .alert.alert-danger(style="text-align: center")
+        h1 Books page
+    a(href="/books/createNew", class ="btn btn-primary") new books
+
+    form(action="/books/search", method= 'get')
+        .input-group.mt-3.mb-3
+            input.form-control(name = "q",placeholder ="Enter to search")
+            .input-group-append
+                button.btn.btn-primary search
+
+    table.table.table-striped.table-dark
+        thead
+            tr
+                th(scope='col') Name
+                th(scope='col') Description
+                th(scope='col') Cost
+                th(scope='col') Edit
+                th(scope='col') Delete
+        tbody
+            each book in books
+                tr
+                    td= book.name
+                    td= book.description
+                    td= book.cost
+                    td
+                        a(href="/books/update/" + book.id).btn.btn-primary Edit
+                    td
+                        a(href="/books/delete/" + book.id).btn.btn-danger Delete
