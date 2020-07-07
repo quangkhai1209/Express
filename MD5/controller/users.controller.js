@@ -1,3 +1,4 @@
+const bcrypt = require('bcrypt');
 let db = require('../db');
 let shortid = require('shortid');
 
@@ -19,6 +20,7 @@ module.exports.postCreateNew = (req, res) => {
     if(!temp){
         req.body.id = shortid.generate();
         req.body.lv = "0";
+        req.body.pass = bcrypt.hashSync(req.body.pass, 10);
         db.get("users").push(req.body).write();
         res.redirect('/users')
     }else{

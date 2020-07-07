@@ -17,7 +17,6 @@ app.use(express.static('public'));
 app.use(cookieParse());
 
 app.get('/',(req,res)=>{
-    console.log(req.cookies);
     res.render('index')
 });
 

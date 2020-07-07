@@ -4,7 +4,7 @@
       "name": "Nguyen Chuong",
       "age": "20",
       "phone": "0987374741",
-      "pass": "202cb962ac59075b964b07152d234b70",
+      "pass": "$2b$10$828YALpBLgVzaow6wg0NF.AC3WMuUHcCAZ2ntaO1qVZgCTnwxXdou",
       "lv": "1",
       "id": "Av1u8LWmd"
     },
@@ -15,6 +15,14 @@
       "pass": "202cb962ac59075b964b07152d234b70",
       "lv": "0",
       "id": "9O4wDW7dg"
+    },
+    {
+      "name": "test part 2",
+      "age": "23`",
+      "phone": "4210",
+      "pass": "$2b$10$5bWcOcQhA73fQ5ebfwzLd.4TEct1PVM9uMmU5M7.hXrEy.gFpbOlS",
+      "id": "6Feys_1N2",
+      "lv": "0"
     }
   ],
   "books": [

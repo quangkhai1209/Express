@@ -1,6 +1,5 @@
-let md5 = require('md5');
+const bcrypt = require('bcrypt');
 let db = require('../db');
-const { find } = require('../db');
 
 module.exports.Login = (req,res,next)=>{
     const errs = [];
@@ -10,8 +9,7 @@ module.exports.Login = (req,res,next)=>{
 }
 module.exports.postLogin = (req,res,next)=>{
     let acc = db.get('users').value().find((item)=>{
-        let hashedPassword = md5(req.body.pass);
-        return item.phone == req.body.uname && item.pass == hashedPassword;
+        return item.phone == req.body.uname && bcrypt.compareSync(req.body.pass, item.pass);
     });
     const errs =[];
     if(acc){
