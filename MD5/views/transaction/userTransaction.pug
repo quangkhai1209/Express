@@ -1,5 +1,7 @@
 extends ../layouts/userCommon
 block content
+    if u
+        p= u.name
     table.table.table-striped.table-dark
         thead
             tr
