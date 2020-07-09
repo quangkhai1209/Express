@@ -21,6 +21,7 @@ module.exports.postCreateNew = (req, res) => {
         req.body.id = shortid.generate();
         req.body.lv = "0";
         req.body.pass = bcrypt.hashSync(req.body.pass, 10);
+        req.body.wrongLoginCount = 0;
         db.get("users").push(req.body).write();
         res.redirect('/users')
     }else{

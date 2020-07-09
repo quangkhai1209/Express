@@ -12,17 +12,28 @@
       "name": "Ngoc Mai",
       "age": "20",
       "phone": "123456",
-      "pass": "202cb962ac59075b964b07152d234b70",
+      "pass": "$2b$10$fLpnlNUzuIGMIPn2KEGlNeyJR179N1xEoea1g7BU9hx8AT2wz2fAG",
+      "id": "tM81fbiMd",
       "lv": "0",
-      "id": "9O4wDW7dg"
+      "wrongLoginCount": 0
     },
     {
-      "name": "test part 2",
-      "age": "23`",
-      "phone": "4210",
-      "pass": "$2b$10$5bWcOcQhA73fQ5ebfwzLd.4TEct1PVM9uMmU5M7.hXrEy.gFpbOlS",
-      "id": "6Feys_1N2",
-      "lv": "0"
+      "name": "Minh",
+      "age": "20",
+      "phone": "456789",
+      "pass": "$2b$10$rEF/LlEFROm9B1evhfUBjuPbhCHn6VMiWsAIKAsbme4IoXQXCV0hS",
+      "id": "-3nX5JHy9",
+      "lv": "0",
+      "wrongLoginCount": 0
+    },
+    {
+      "name": "Khai Tran",
+      "age": "20",
+      "phone": "456654",
+      "pass": "$2b$10$7KAvCAUCHAoc7Hy8Pe7m2OGHCtfwr2HH5fgtVheH..nNxKu7KRutC",
+      "id": "jl6N07n4u",
+      "lv": "0",
+      "wrongLoginCount": 0
     }
   ],
   "books": [
@@ -47,62 +58,12 @@
   ],
   "transaction": [
     {
-      "id": "RA3FNdr8P",
-      "userId": "Av1u8LWmd",
-      "bookId": "Iaem3rwXV",
-      "userName": "Nguyen Chuong",
-      "bookTitle": "CSS",
-      "dateCurrent": "6-6-2020",
-      "isComplete": true,
-      "dateComplete": "6-6-2020"
-    },
-    {
-      "id": "33KIHmp2V",
+      "id": "Pk12z7qAY",
       "userId": "Av1u8LWmd",
       "bookId": "03plu9VA0",
       "userName": "Nguyen Chuong",
       "bookTitle": "JAVASCRIPT",
-      "dateCurrent": "6-6-2020",
-      "isComplete": true,
-      "dateComplete": "6-6-2020"
-    },
-    {
-      "id": "tzYvurmIf",
-      "userId": "Av1u8LWmd",
-      "bookId": "8Tync0Kwm",
-      "userName": "Nguyen Chuong",
-      "bookTitle": "HTML",
-      "dateCurrent": "6-6-2020",
-      "isComplete": true,
-      "dateComplete": "6-6-2020"
-    },
-    {
-      "id": "vu14UBibn",
-      "userId": "Av1u8LWmd",
-      "bookId": "Iaem3rwXV",
-      "userName": "Nguyen Chuong",
-      "bookTitle": "CSS",
-      "dateCurrent": "6-6-2020",
-      "isComplete": true,
-      "dateComplete": "6-6-2020"
-    },
-    {
-      "id": "889ejjx8g",
-      "userId": "9O4wDW7dg",
-      "bookId": "8Tync0Kwm",
-      "userName": "Ngoc Mai",
-      "bookTitle": "HTML",
-      "dateCurrent": "6-6-2020",
-      "isComplete": true,
-      "dateComplete": "2-6-2020"
-    },
-    {
-      "id": "9hxJLiQG3",
-      "userId": "9O4wDW7dg",
-      "bookId": "8Tync0Kwm",
-      "userName": "Ngoc Mai",
-      "bookTitle": "HTML",
-      "dateCurrent": "5-6-2020",
+      "dateCurrent": "3-7-2020",
       "isComplete": false
     }
   ]
