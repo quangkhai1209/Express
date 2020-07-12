@@ -1,0 +1,20 @@
+extends ../layouts/common
+block content
+    .alert.alert-primary(style="text-align: center") 
+        h1 new User
+
+    form(action="", method="post")
+        .input-group
+            .input-group-prepend
+                span#inputGroup-sizing-default.input-group-text Name
+                    input.form-control(type='text',name="name", placeholder="Enter Your Name", value= values ? values.name : "")
+                span#inputGroup-sizing-default.input-group-text Age
+                    input.form-control(type='text', name="age",  placeholder="Enter Your Age", value= values ? values.age : "")
+                span#inputGroup-sizing-default.input-group-text Phone
+                    input.form-control(type='text', name="phone",  placeholder="Enter Your Phone", value= values ? values.phone : "")
+                span#inputGroup-sizing-default.input-group-text Password
+                    input.form-control(type='text', name="pass",  placeholder="Enter Your Phone", value= values ? values.phone : "")
+            button.btn.btn-success Add
+    if errs
+        each err in errs
+            .alert.alert-danger= err

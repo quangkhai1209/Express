@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "name": "Nguyen Chuong",
+      "age": "20",
+      "phone": "0987374741",
+      "pass": "$2b$10$828YALpBLgVzaow6wg0NF.AC3WMuUHcCAZ2ntaO1qVZgCTnwxXdou",
+      "lv": "1",
+      "id": "Av1u8LWmd"
+    },
+    {
+      "name": "Ngoc Mai",
+      "age": "20",
+      "phone": "123456",
+      "pass": "$2b$10$fLpnlNUzuIGMIPn2KEGlNeyJR179N1xEoea1g7BU9hx8AT2wz2fAG",
+      "id": "tM81fbiMd",
+      "lv": "0",
+      "wrongLoginCount": 0
+    },
+    {
+      "name": "Minh",
+      "age": "20",
+      "phone": "456789",
+      "pass": "$2b$10$rEF/LlEFROm9B1evhfUBjuPbhCHn6VMiWsAIKAsbme4IoXQXCV0hS",
+      "id": "-3nX5JHy9",
+      "lv": "0",
+      "wrongLoginCount": 0
+    },
+    {
+      "name": "Khai Tran",
+      "age": "20",
+      "phone": "456654",
+      "pass": "$2b$10$7KAvCAUCHAoc7Hy8Pe7m2OGHCtfwr2HH5fgtVheH..nNxKu7KRutC",
+      "id": "jl6N07n4u",
+      "lv": "0",
+      "wrongLoginCount": 4
+    }
+  ],
+  "books": [
+    {
+      "name": "CSS",
+      "description": "This is CSS Book",
+      "cost": "200",
+      "id": "Iaem3rwXV"
+    },
+    {
+      "name": "JAVASCRIPT",
+      "description": "This Is Javascript Books",
+      "cost": "500",
+      "id": "03plu9VA0"
+    },
+    {
+      "name": "HTML",
+      "description": "This is HTMl Book",
+      "cost": "100",
+      "id": "8Tync0Kwm"
+    }
+  ],
+  "transaction": [
+    {
+      "id": "Pk12z7qAY",
+      "userId": "Av1u8LWmd",
+      "bookId": "03plu9VA0",
+      "userName": "Nguyen Chuong",
+      "bookTitle": "JAVASCRIPT",
+      "dateCurrent": "3-7-2020",
+      "isComplete": true,
+      "dateComplete": "4-7-2020"
+    },
+    {
+      "id": "j-Mwir2YQ",
+      "userId": "-3nX5JHy9",
+      "bookId": "Iaem3rwXV",
+      "userName": "Minh",
+      "bookTitle": "CSS",
+      "dateCurrent": "4-7-2020",
+      "isComplete": false
+    },
+    {
+      "id": "hXg2qzb-X",
+      "userId": "jl6N07n4u",
+      "bookId": "03plu9VA0",
+      "userName": "Khai Tran",
+      "bookTitle": "JAVASCRIPT",
+      "dateCurrent": "4-7-2020",
+      "isComplete": false
+    },
+    {
+      "id": "zDUu45lB1",
+      "userId": "tM81fbiMd",
+      "bookId": "8Tync0Kwm",
+      "userName": "Ngoc Mai",
+      "bookTitle": "HTML",
+      "dateCurrent": "4-7-2020",
+      "isComplete": false
+    }
+  ]
+}
