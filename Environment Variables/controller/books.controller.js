@@ -13,8 +13,15 @@ module.exports.getCreate = (req, res) => {
     })
 };
 module.exports.postCreate = (req, res) => {
+    const { name, description, cost } = req.body;
+    const dataNewBooks = {
+        id: shortid.generate(),
+        name,
+        description,
+        cost
+    }
     req.body.id = shortid.generate();
-    db.get("books").push(req.body).write();
+    db.get("books").push(dataNewBooks).write();
     res.redirect('/books')
 };
 module.exports.getUpdate = (req, res) => {
@@ -23,27 +30,30 @@ module.exports.getUpdate = (req, res) => {
     })
 }
 module.exports.postUpdate = (req, res) => {
+    const { name, description, cost } = req.body;
     db.get('books')
         .find({ id: req.params.id })
-        .assign({ name: req.body.name, description: req.body.description, cost: req.body.cost })
+        .assign({ name, description, cost })
         .write();
     res.redirect('/books');
 }
 module.exports.getDelete = (req, res) => {
-    res.render('books/delete',{
-        book : db.get('books').find({id : req.params.id}).value()
+    const { id } = req.params;
+    res.render('books/delete', {
+        book: db.get('books').find({ id }).value()
     })
 }
 module.exports.postDelete = (req, res) => {
-    db.get('books').remove({id : req.params.id}).write();
+    const { id } = req.params;
+    db.get('books').remove({ id }).write();
     res.redirect('/books')
 }
-module.exports.search = (req,res)=>{
-    const query = req.query.q;
-    const arrFilter = db.get('books').value().filter((item)=>{
-        return item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+module.exports.search = (req, res) => {
+    const { q } = req.query;
+    const arrFilter = db.get('books').value().filter((item) => {
+        return item.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
     res.render('books/index', {
-        books : arrFilter
+        books: arrFilter
     });
 }

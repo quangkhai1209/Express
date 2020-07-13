@@ -12,30 +12,28 @@ module.exports.getIndex = (req, res, next) => {
     });
 }
 module.exports.postNew = (req, res) => {
-    const id = shortid.generate();
-    const userId = req.body.userId;
-    const bookId = req.body.bookId;
-    const userName = db.get('users').find({ id: userId }).value().name;
-    const bookTitle = db.get('books').find({ id: bookId }).value().name;
-    const isComplete = false;
     const date = new Date();
-    const dateCurrent = '' + date.getDay() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-    const transaction = { id, userId, bookId, userName, bookTitle, dateCurrent, isComplete };
-    db.get('transaction').push(transaction).write();
+    const { userId, bookId } = req.body;
+    const dataTran = {
+        id: shortid.generate(),
+        userId,
+        bookId,
+        userName: db.get('users').find({ id: userId }).value().name,
+        bookTitle: db.get('books').find({ id: bookId }).value().name,
+        isComplete: false,
+        dateCurrent: '' + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear(),
+    }
+    db.get('transaction').push(dataTran).write();
     res.redirect('/transaction');
 };
 
 module.exports.complete = (req, res) => {
-    // const id = req.params.id;
-    // const date = new Date();
-    // const dateComplete = ''+date.getDay()+"-"+(date.getMonth() + 1) + "-" + date.getFullYear();
-    // db.get('transaction').find({ id: id}).assign({isComplete: true, dateComplete : dateComplete}).write();
-    // res.redirect('/transaction');
+    const { id } = req.params;
+    const date = new Date();
+    const dateComplete = '' + date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
     let text = "Chưa nghịch bậy :>";
-    if (db.get('transaction').find({ id: req.params.id }).value()) {
-        const id = req.params.id;
-        const date = new Date();
-        const dateComplete = '' + date.getDay() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+
+    if (db.get('transaction').find({ id: id }).value()) {
         db.get('transaction').find({ id: id }).assign({ isComplete: true, dateComplete: dateComplete }).write();
         res.redirect('/transaction');
     } else {
@@ -47,32 +45,31 @@ module.exports.complete = (req, res) => {
             books: db.get("books").value(),
             text: text
         });
-    }
-
+    };
 };
 module.exports.search = (req, res) => {
-    const nameUser = req.query.nameUser;
-    const nameBook = req.query.nameBook;
+    const { nameUser, nameBook } = req.query;
+    if (!nameUser && !nameBook) {
+        res.redirect('/transaction')
+        return;
+    };
+    // fail fast
     let text = "Chưa nghịch bậy :>";
     let search;
-    if (nameBook == "") {
-        search = db.get('transaction').value().filter((item) => {
+    if (!nameBook) {
+        search = db.get('transaction').value().filter((item) => { // array.includes
             return item.userName.toLowerCase().indexOf(nameUser.toLowerCase()) !== -1;
         });
-    }
-    if (nameUser == "") {
+    };
+    if (!nameUser) {
         search = db.get('transaction').value().filter((item) => {
             return item.bookTitle.toLowerCase().indexOf(nameBook.toLowerCase()) !== -1;
         });
-    }
-    if (!nameUser && !nameBook) {
-        res.redirect('/transaction')
-    }
-
+    };
     res.render('transaction/index', {
         transactions: search,
         users: db.get('users').value(),
         books: db.get("books").value(),
         text: text
-    })
+    });
 };

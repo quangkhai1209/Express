@@ -11,55 +11,64 @@ module.exports.getIndex = (req, res) => {
 module.exports.getCreateNew = (req, res) => {
     res.render('users/create');
 };
-module.exports.postCreateNew = (req, res) => {
+module.exports.postCreateNew = async (req, res) => {
+    const { name, age, phone, pass } = req.body;
+    const userData = {
+        name,
+        age,
+        phone,
+        pass: await bcrypt.hash(pass, 10),
+        id: shortid.generate(),
+        lv: 0,
+        wrongLoginCount: 0
+    };
     let errs = [];
-    let temp = db.get('users').value().find((item)=>{
-        return item.phone == req.body.phone;
+    let temp = db.get('users').value().find((item) => {
+        return item.phone == phone;
     });
-    console.log(temp)
-    if(!temp){
-        req.body.id = shortid.generate();
-        req.body.lv = "0";
-        req.body.pass = bcrypt.hashSync(req.body.pass, 10);
-        req.body.wrongLoginCount = 0;
-        db.get("users").push(req.body).write();
+    if (!temp) {
+        db.get("users").push(userData).write();
         res.redirect('/users')
-    }else{
+    } else {
         errs.push("Phone is same some where.")
-        res.render('users/create',{
-            errs : errs
+        res.render('users/create', {
+            errs: errs
         });
     }
-    
 };
 module.exports.getUpdate = (req, res) => {
-    let data = db.get('users').find({ id: req.params.id }).value();
+    const { id } = req.params;
+    let data = db.get('users').find({ id }).value();
     res.render('users/update', {
         user: data
     })
 };
 module.exports.postUpdate = (req, res) => {
+    const { name, age, phone } = req.body;
+    const { id } = req.params;
     db.get('users')
-        .find({ id: req.params.id })
-        .assign({ name: req.body.name, age: req.body.age, phone: req.body.phone })
+        .find({ id: id })
+        .assign({ name, age, phone })
         .write();
     res.redirect('/users');
 };
 module.exports.getDelete = (req, res) => {
+    const { id } = req.params;
     res.render('users/delete', {
-        user: db.get('users').find({ id: req.params.id }).value()
+        user: db.get('users').find({ id: id }).value()
     })
 };
 module.exports.postDelete = (req, res) => {
-    db.get('users').remove({ id: req.params.id }).write();
+    const { id } = req.params;
+    db.get('users').remove({ id: id }).write();
     res.redirect('/users');
 };
 module.exports.search = (req, res) => {
-    const query = req.query.q;
-    const arrFilter = db.get('users').value().filter((item)=>{
-        return item.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+    const { q } = req.query;
+    const arrFilter = db.get('users').value().filter((item) => {
+        return item.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
     res.render('users/index', {
-        users : arrFilter
+        users: arrFilter
     });
-}
+};
