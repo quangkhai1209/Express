@@ -1,0 +1,25 @@
+extends ../layouts/userCommon
+block content
+    if user
+        p= user.name 
+            a(href="/auth/"+user.id).btn.btn-primary List Transaction
+    form(action="", method= 'GET')
+        nav(aria-label='Page navigation example')
+
+            ul.pagination.justify-content-end
+                li.page-item
+                    a.page-link(href="", name = "page")
+                        span(aria-hidden='true') &laquo;
+                each link in links
+                    li.page-item
+                        a.page-link(href=link)= link.substr(link.length-1,link.length)
+                li.page-item
+                    a.page-link(href='#', aria-label='Next')
+                        span(aria-hidden='true') &raquo;
+    each book in books      
+        .card(style='width: 15rem; display : inline-block; margin : 0 10px 20px 10px; max: 15rem;')
+            img.card-img-top(src= book.url, alt='...')
+            .card-body
+                h5.card-title= book.name
+                p.card-text= book.description
+                a.btn.btn-primary(href='') Add to cart
