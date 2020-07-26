@@ -1,0 +1,28 @@
+extends ../layouts/common
+block content
+    form(style= "max-width: 800px; margin : auto; padding-top: 25px" action="", method="post", enctype="multipart/form-data")
+        button.btn.btn-danger(type='submit') Accept to Delete
+        .form-row
+            .form-group.col-md-6
+                label(for='nameBook') Name Book
+                input#nameBook.form-control(type='text', name = 'nameBook', value= values ? values.nameBook : '', readonly)
+            .form-group.col-md-6
+                label(for='publisher') Publisher
+                input#publisher.form-control(type='text', name = 'publisher', value= values ? values.publisher : '', readonly)
+        .form-row
+            .form-group.col-md-6
+                label(for='cost') Cost
+                input#cost.form-control(type="number", name = 'cost', value= values ? values.cost : '', readonly)
+            .form-group.col-md-6
+                label(for='quantity') Quantity
+                input#quantity.form-control(type='number', name = 'quantity', value= values ? values.quantity : '', readonly)
+        .form-row
+            .form-group.col-md-6
+                label(for='description') Description
+                textarea#description.form-control(name = 'description', readonly)= values ? values.description.substr(10) == 10 : ''    
+            .form-group.col-md-2
+                img(src= values ? "/" + values.images : '', alt="", width = 240)
+        
+    if errs
+        each err in errs
+            .alert.alert-danger(style= "max-width: 800px; margin : auto")= err

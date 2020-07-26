@@ -1,0 +1,40 @@
+extends ../layouts/common
+block content
+    form(style= "max-width: 800px; margin : auto; padding-top: 25px", action="", method="post", enctype="multipart/form-data")
+        .form-row
+            .form-group.col-md-6
+                label(for='inputEmail4') Email
+                input#inputEmail4.form-control(type='email',  placeholder='chunguyenchuong2014bg@gmail.com', name = 'email', value= values ? values.email : '')
+            .form-group.col-md-6
+                label(for='inputPassword4') Password
+                input#inputPassword4.form-control(type='password', name = 'password')
+        .form-row
+            .form-group.col-md-6
+                label(for='inputName') Full Name
+                input#inputName.form-control(type='text', placeholder='Chu Nguyen Chuong', name= 'fullName', value= values ? values.fullName : '')
+            .form-group.col-md-6
+                label(for='inputAddress') Address
+                input#inputAddress.form-control(type='text', placeholder='Tân Sơn, Lục Ngạn, Bắc Giang', name= "address", , value= values ? values.address : '')
+        .form-row
+            .form-group.col-md-6
+                label(for='inputPhone') Phone
+                input#inputPhone.form-control(type='text', placeholder='098 7374 741', name = "phoneNumber", , value= values ? values.phoneNumber : '')
+            .form-group.col-md-3
+                label(for='inputAge') Age
+                input#inputAge.form-control(type='text', placeholder='20', name = "age", value= values ? values.age : '')
+            .form-group.col-md-3
+                label(for='wrongLoginCount') wrong Login Count
+                input#wrongLoginCount.form-control(type='text', placeholder='20', name = "wrongLoginCount", value= values ? values.wrongLoginCount : '')
+        .form-row
+            .form-group.col-md-3
+                button.btn.btn-primary(type='submit') Edit
+            .form-group.col-md-4
+                label(for='inputAvatar') AVATAR
+                input#inputAvatar.form-control-files(type='file', value = 0, name = "avatar")
+            .form-group.col-md-4
+                img(src= values ? "/" + values.avatar : '', alt="", width = 240)
+
+            
+    if errs
+        each err in errs
+            .alert.alert-danger(style= "max-width: 800px; margin : auto")= err

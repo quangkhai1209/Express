@@ -1,0 +1,28 @@
+extends ../layouts/common
+block content
+    form(style= "max-width: 800px; margin : auto; padding-top: 25px" action="", method="post", enctype="multipart/form-data")
+        .form-row
+            .form-group.col-md-6
+                label(for='nameBook') Name Book
+                input#nameBook.form-control(type='text', name = 'nameBook', value= values ? values.nameBook : '')
+            .form-group.col-md-6
+                label(for='publisher') Publisher
+                input#publisher.form-control(type='text', name = 'publisher', value= values ? values.publisher : '')
+        .form-row
+            .form-group.col-md-6
+                label(for='cost') Cost
+                input#cost.form-control(type="number", name = 'cost', value= values ? values.cost : '')
+            .form-group.col-md-6
+                label(for='quantity') Quantity
+                input#quantity.form-control(type='number', name = 'quantity', value= values ? values.quantity : '')
+        .form-row
+            .form-group.col-md-6
+                label(for='description') Description
+                textarea#description.form-control(name = 'description')= values ? values.description : ''
+            .form-group.col-md-2
+                label(for='imageBook') Image
+                input#imageBook.form-control-files(type='file', value = 0, name = "images",)
+        button.btn.btn-primary(type='submit') Add New to Database
+    if errs
+        each err in errs
+            .alert.alert-danger(style= "max-width: 800px; margin : auto")= err

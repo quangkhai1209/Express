@@ -1,0 +1,113 @@
+{
+  "users": [
+    {
+      "email": "khaitq180193@fpt.edu.vn",
+      "password": "$2b$10$A3InOO4g85AuNIkpqy0BteWqOFXMVXGMAus3SYtnzvVNjhrrmivCO",
+      "fullName": "Trần Quang Khải",
+      "address": "Hà Nam",
+      "phoneNumber": "0888466817",
+      "age": "20",
+      "level": "0",
+      "id": "nbhBCedT_I",
+      "wrongLoginCount": 0,
+      "avatar": "uploads/352bc5b5f45bcebd78653ea7aab9d471"
+    },
+    {
+      "email": "chuongcnbhaf180208@fpt.edu.vn",
+      "password": "$2b$10$/ZyWTGimqUfkvULcMwOyI.7hJv4CUuPd7Vxid6qP0fPhcxICVp/m2",
+      "fullName": "Chu Nguyên Chương",
+      "address": "Tân Sơn, Lục Ngạn, Bắc Giang",
+      "phoneNumber": "098 7374 741",
+      "age": "20",
+      "level": "1",
+      "id": "mn9pM5okln",
+      "wrongLoginCount": 0,
+      "avatar": "uploads/5a2f7d76963a30f5a47ba1010d672409"
+    }
+  ],
+  "books": [
+    {
+      "nameBook": "HTML",
+      "cost": "200",
+      "quantity": "5",
+      "description": "This is HTML books For Beginer",
+      "id": "vqnWXHb7y",
+      "images": "uploads/94b9469832cc7e5930d400996498f80d",
+      "publisher": "Chuong"
+    },
+    {
+      "nameBook": "PHP",
+      "cost": "200",
+      "quantity": "5",
+      "description": "This is PHP book for beginer",
+      "id": "jrAfzZ2PY",
+      "images": "uploads/8c669745eaf96a2019fe8f9101833737",
+      "publisher": "Chuong"
+    },
+    {
+      "nameBook": "CSS basic",
+      "cost": "100",
+      "quantity": "5",
+      "description": "This is css book for beginer",
+      "id": "VEtROcqFq",
+      "images": "uploads/010072067b18ae337befd1ebb0dc36a4",
+      "publisher": "Chuong"
+    },
+    {
+      "nameBook": "Javascript",
+      "cost": "200",
+      "quantity": "5",
+      "description": "This is JS book for beginer",
+      "id": "HnM2s-U6Z",
+      "images": "uploads/01b42b92223d2addc49f4d008610ab6e",
+      "publisher": "Chuong"
+    },
+    {
+      "nameBook": "Ruby",
+      "cost": "150",
+      "quantity": "5",
+      "description": "This is ruby language",
+      "id": "ERN1sB65i",
+      "images": "uploads/551107406e333a80efea7d453ce89f95",
+      "publisher": "Chuong"
+    },
+    {
+      "nameBook": "Naruto ",
+      "publisher": "ông nào đấy bên nhật",
+      "cost": "100",
+      "quantity": "5",
+      "description": "kể về thằng nhóc có trong mình con cửu vĩ hồ, dùng sức mạnh của bản thân để mê hoặc cả làng để làm Hokage ",
+      "id": "l32K0cxtX",
+      "images": "uploads/c54eb16c4ee3feef898ac4179d6a0f92"
+    },
+    {
+      "nameBook": "Boruto ",
+      "publisher": "ông nào đấy bên nhật",
+      "cost": "20",
+      "quantity": "10",
+      "description": "kể về thằng con Naruto",
+      "id": "6whkn6t17",
+      "images": "uploads/6d5c1db707fa18c0070d554ded9b34fc"
+    },
+    {
+      "nameBook": "One Punch Man",
+      "publisher": "Sone one ",
+      "cost": "30",
+      "quantity": "10",
+      "description": "hack game là đây chứ đâu",
+      "id": "YDx6Iwdj-",
+      "images": "uploads/cb3550e76d0d58e08abbd1559ce62baf"
+    },
+    {
+      "nameBook": "BLACK CLOVER ",
+      "publisher": "Sone one else",
+      "cost": "30",
+      "quantity": "3",
+      "description": "kể về 2 thằng nhóc có cùng mục tiêu trở nên mạnh mẽ",
+      "id": "q68LoRE3R",
+      "images": "uploads/57f2006287e5e07ebb7829f6a7f6e391"
+    }
+  ],
+  "order": [],
+  "orderDetails": []
+}

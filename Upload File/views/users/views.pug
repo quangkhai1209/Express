@@ -1,0 +1,33 @@
+extends ../layouts/common
+block content
+    form.justify-content-center(action="", method="get", style="padding: 30px 0;")
+        .form-inline.my-2.my-lg-0.pr-0.pb-4
+            input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search', name="name")
+            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search   
+    table.table.table-striped.table-dark
+        thead
+            tr  
+                th(scope='col') Avatar
+                th(scope='col') Email
+                th(scope='col') Name
+                th(scope='col') Age
+                th(scope='col') Phone
+                th(scope='col') Address
+                th(scope='col') wrongLoginCount
+                th(scope='col') Edit
+                th(scope='col') Delete
+        tbody
+            each user in users
+                tr
+                    td
+                        img(src= "/" + user.avatar, width = 34)  
+                    td= user.email
+                    td= user.fullName
+                    td= user.age
+                    td= user.phoneNumber
+                    td= user.address
+                    td= user.wrongLoginCount
+                    td
+                        a(href="/admin/manage/users/detail/" + user.id).btn.btn-primary Edit
+                    td
+                        a(href="/admin/manage/users/delete/" + user.id).btn.btn-danger Delete

@@ -1,0 +1,27 @@
+extends ../layouts/common
+block content
+    form.justify-content-center(action="", method="get", style="padding: 30px 0;")
+        .form-inline.my-2.my-lg-0.pr-0.pb-4
+            input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search', name="name", value= query ? query : "")
+            button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search   
+            nav(aria-label='Page navigation example')
+                ul.pagination.justify-content-center
+                    li.page-item
+                        a.page-link(href="", name = "page")
+                            span(aria-hidden='true') &laquo;
+                    each link in links
+                        li.page-item
+                            a.page-link(href=link)= link.substr(link.length-1,link.length)
+                    li.page-item
+                        a.page-link(href='#', aria-label='Next')
+                            span(aria-hidden='true') &raquo;
+    each book in books      
+        .card(style='width: 15rem; display : inline-block; margin : 0 10px 20px 10px; max: 15rem;')
+            img.card-img-top(src= "/"+ book.images, height= 240)
+            .card-body
+                h5.card-title= book.nameBook
+                h6.card-subtitle.mb-2.text-muted= book.publisher
+                h6.card-subtitle.mb-2.text-muted(style="color : red !important")= book.cost + " $ - - - - - - - - -" + book.quantity  + " items"
+                p.card-text= book.description
+                a.btn.btn-primary(href='/admin/manage/books/viewBooks/edit/' + book.id, style="margin: 0 25px") Edit
+                a.btn.btn-danger(href='/admin/manage/books/viewBooks/delete/' + book.id) Delete

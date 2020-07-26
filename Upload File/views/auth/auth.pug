@@ -1,0 +1,22 @@
+head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Document
+    link(rel='shortcut icon', href='/imgs//logo.ico', type='image/x-icon')
+    link(rel="stylesheet", href="/css//style.login.css")
+.modal
+    form.modal-content.animate(action='', method='post')
+        .imgcontainer
+            img.avatar(src='/imgs/img_avatar2.png', alt='Avatar')
+        .container
+            label(for='userName')
+                b Username
+            input(id='userName', type='text', placeholder='Enter Username', name='userName', required, value= values ? values.uname : "")
+            label(for='psw')
+                b Password
+            input(id='psw', type='password', placeholder='Enter Password', name='password', required,value= values ? values.pass : "")
+            button(type='submit') Login
+        .container(style='background-color:#f1f1f1')
+            if(errs)
+                each err in errs
+                    p= err

@@ -98,7 +98,6 @@ module.exports.listBooks = (req, res, next) => {
         }
     } else {
         for (let index = page - 1; index <= page + 1; index++) {
-            console.log(index)
             link.push("http://localhost:98/auth/" + user.id + "/listBooks?page=" + index);
         };
     }
